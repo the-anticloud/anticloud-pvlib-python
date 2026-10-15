@@ -1,0 +1,553 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "PVLIB_PYTHON",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\SOLAR\\PVLIB_PYTHON\\UPSTREAM_CLONE",
+    "git": {
+      "head": "ddcc776134f56067e185302c54b15dfc5d01621e",
+      "url": "https://github.com/pvlib/pvlib-python",
+      "branch": "main",
+      "committed_at": "2026-10-01T19:35:23+02:00"
+    }
+  },
+  "metrics": {
+    "files_total": 452,
+    "source_files_scanned": 181,
+    "lines_of_code": 66354,
+    "languages": {
+      ".py": 187,
+      ".rst": 113,
+      ".csv": 46,
+      ".txt": 20,
+      ".png": 16,
+      ".json": 8,
+      ".ipynb": 8,
+      ".md": 7,
+      ".yml": 7,
+      "(none)": 6,
+      ".dat": 6,
+      ".pdf": 4,
+      ".css": 3,
+      ".jpg": 3,
+      ".epw": 2
+    }
+  },
+  "licence": {
+    "spdx": "BSD-3-Clause",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 7,
+    "unique": 7,
+    "by_ecosystem": {
+      "pypi": 7
+    },
+    "list": [
+      {
+        "ecosystem": "pypi",
+        "name": "numpy",
+        "version": ">=",
+        "source_file": "pyproject.toml",
+        "raw": "numpy >="
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "pandas",
+        "version": ">=",
+        "source_file": "pyproject.toml",
+        "raw": "pandas >="
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "pytz",
+        "version": "",
+        "source_file": "pyproject.toml",
+        "raw": "pytz"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "requests",
+        "version": "",
+        "source_file": "pyproject.toml",
+        "raw": "requests"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "scipy",
+        "version": ">=",
+        "source_file": "pyproject.toml",
+        "raw": "scipy >="
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "h5py",
+        "version": "",
+        "source_file": "pyproject.toml",
+        "raw": "h5py"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "tzdata",
+        "version": "",
+        "source_file": "pyproject.toml",
+        "raw": "tzdata"
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 36,
+    "files_with_findings": 32,
+    "severity": {
+      "high": 3,
+      "medium": 0,
+      "low": 33
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A03-Injection": {
+        "count": 0,
+        "findings": []
+      },
+      "A04-InsecureDesign": {
+        "count": 14,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "tests/conftest.py",
+            "line": 230,
+            "cwe": "CWE-",
+            "snippet": "# TODO remove this when our minimum scipy is >=1.15"
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_clearsky.py",
+            "line": 885,
+            "cwe": "CWE-",
+            "snippet": "# XXX: calculations start at 12am so noon is at index = 12"
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_singlediode.py",
+            "line": 466,
+            "cwe": "CWE-",
+            "snippet": "# TODO: add this once chandrupatla becomes non-optional functionality"
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_solarposition.py",
+            "line": 739,
+            "cwe": "CWE-",
+            "snippet": "# FIXME: there are differences from expected NLR SPA calculator values"
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_tools.py",
+            "line": 175,
+            "cwe": "CWE-",
+            "snippet": "# FIXME Derive timestamp strings from above variables."
+          },
+          {
+            "severity": "low",
+            "file": "tests/iotools/test_midc.py",
+            "line": 24,
+            "cwe": "CWE-",
+            "snippet": "# TODO: not used, remove?"
+          },
+          {
+            "severity": "low",
+            "file": "tests/iotools/test_surfrad.py",
+            "line": 115,
+            "cwe": "CWE-",
+            "snippet": "message = \"No data retrieved for station 'xxx'\""
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/clearsky.py",
+            "line": 1040,
+            "cwe": "CWE-",
+            "snippet": "# TODO: be DRY, use decorator to wrap methods that need to return either"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/singlediode.py",
+            "line": 346,
+            "cwe": "CWE-",
+            "snippet": "# TODO remove this when our minimum scipy version is >=1.15"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/iotools/crn.py",
+            "line": 111,
+            "cwe": "CWE-",
+            "snippet": "# TODO: instead of parsing as strings and then post-processing, switch to"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/iotools/meteonorm.py",
+            "line": 543,
+            "cwe": "CWE-",
+            "snippet": "# TODO: remove ValueError when our minimum pandas version is high enough"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/iotools/psm4.py",
+            "line": 182,
+            "cwe": "CWE-",
+            "snippet": "# TODO: make format_WKT(object_type, *args) in tools.py"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/iotools/srml.py",
+            "line": 11,
+            "cwe": "CWE-",
+            "snippet": "# the fourth indicating the instrument. Spectral data (7xxx) uses all"
+          },
+          {
+            "severity": "low",
+            "file": "docs/sphinx/source/conf.py",
+            "line": 30,
+            "cwe": "CWE-",
+            "snippet": "# If extensions (or modules to document with autodoc) are in another directory,"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 3,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "tests/iotools/test_merra2.py",
+            "line": 106,
+            "cwe": "CWE-798",
+            "snippet": "username='anything', password='anything',"
+          },
+          {
+            "severity": "high",
+            "file": "tests/iotools/test_meteonorm.py",
+            "line": 19,
+            "cwe": "CWE-798",
+            "snippet": "demo_api_key = 'demo0000-0000-0000-0000-000000000000'"
+          },
+          {
+            "severity": "high",
+            "file": "pvlib/iotools/bsrn.py",
+            "line": 136,
+            "cwe": "CWE-798",
+            "snippet": ">>>     station='cab', username='yourusername', password='yourpassword')  # doctest: +SKIP"
+          }
+        ]
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 19,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "tests/test_numerical_precision.py",
+            "line": 5,
+            "cwe": "CWE-319",
+            "snippet": "http://docs.sympy.org/latest/modules/evalf.html#accuracy-and-error-handling"
+          },
+          {
+            "severity": "low",
+            "file": "tests/test_shading.py",
+            "line": 236,
+            "cwe": "CWE-319",
+            "snippet": "Test data sourced from http://doi.org/10.5281/zenodo.10513987"
+          },
+          {
+            "severity": "low",
+            "file": "tests/iotools/test_srml.py",
+            "line": 25,
+            "cwe": "CWE-319",
+            "snippet": "'http://solardata.uoregon.edu/download/Archive/EUPO1801.txt'"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/atmosphere.py",
+            "line": 203,
+            "cwe": "CWE-319",
+            "snippet": "Available at `DIO <http://dioi.org/jc01.pdf>`_"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/clearsky.py",
+            "line": 197,
+            "cwe": "CWE-319",
+            "snippet": "# http://www.meteonorm.com/images/uploads/downloads/ieashc36_report_TL_AOD_climatologies.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/iam.py",
+            "line": 152,
+            "cwe": "CWE-319",
+            "snippet": "from http://common.books24x7.com/toc.aspx?bookid=17160."
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/irradiance.py",
+            "line": 629,
+            "cwe": "CWE-319",
+            "snippet": ".. [3] http://en.wikipedia.org/wiki/Albedo Accessed January, 2024."
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/location.py",
+            "line": 45,
+            "cwe": "CWE-319",
+            "snippet": "See http://en.wikipedia.org/wiki/List_of_tz_database_time_zones for a"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/modelchain.py",
+            "line": 48,
+            "cwe": "CWE-319",
+            "snippet": "# http://prod.sandia.gov/techlib/access-control.cgi/1985/850330.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/singlediode.py",
+            "line": 55,
+            "cwe": "CWE-319",
+            "snippet": ".. [1] http://www.pveducation.org/pvcdrom/open-circuit-voltage"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/solarposition.py",
+            "line": 436,
+            "cwe": "CWE-319",
+            "snippet": "USA, http://www.nlr.gov."
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/spa.py",
+            "line": 1239,
+            "cwe": "CWE-319",
+            "snippet": "USA, http://www.nlr.gov."
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/temperature.py",
+            "line": 817,
+            "cwe": "CWE-319",
+            "snippet": "http://prod.sandia.gov/techlib/access-control.cgi/1985/850330.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/spectrum/mismatch.py",
+            "line": 561,
+            "cwe": "CWE-319",
+            "snippet": "http://www.soda-pro.com/"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/iotools/acis.py",
+            "line": 134,
+            "cwe": "CWE-319",
+            "snippet": ".. [2] `ACIS Gridded Data <http://www.rcc-acis.org/docs_gridded.html>`_"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/iotools/epw.py",
+            "line": 21,
+            "cwe": "CWE-319",
+            "snippet": "https://energyplus.net/weather , http://climate.onebuilding.org or"
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/iotools/solargis.py",
+            "line": 153,
+            "cwe": "CWE-319",
+            "snippet": "xmlns=\"http://geomodel.eu/schema/data/request\""
+          },
+          {
+            "severity": "low",
+            "file": "pvlib/iotools/srml.py",
+            "line": 13,
+            "cwe": "CWE-319",
+            "snippet": "# numbers `here. <http://solardata.uoregon.edu/DataElementNumbers.html>`_"
+          },
+          {
+            "severity": "low",
+            "file": "docs/sphinx/source/conf.py",
+            "line": 336,
+            "cwe": "CWE-319",
+            "snippet": "\"doi\": (\"http://dx.doi.org/%s\", \"DOI: %s\"),"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 1,
+    "files_with_findings": 1,
+    "severity": {
+      "high": 0,
+      "medium": 0,
+      "low": 1
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "pvlib/atmosphere.py",
+            "line": 522,
+            "cwe": "CWE-",
+            "snippet": "pyrheliometric and monochromatic aerosol optical depths at a single key"
+          }
+        ]
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:1db7965a-9e68-57db-9984-bb2457f6b19f",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T06:25:46Z",
+      "component": {
+        "type": "application",
+        "name": "PVLIB_PYTHON",
+        "version": "ddcc776134f5",
+        "bom-ref": "pkg:generic/anticloud/PVLIB_PYTHON@ddcc776134f5",
+        "purl": "pkg:generic/anticloud/PVLIB_PYTHON@ddcc776134f5",
+        "licenses": [
+          {
+            "license": {
+              "id": "BSD-3-Clause"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "ddcc776134f56067e185302c54b15dfc5d01621e"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/pvlib/pvlib-python"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "numpy",
+        "version": ">=",
+        "purl": "pkg:pypi/numpy@",
+        "bom-ref": "pypi/numpy@>="
+      },
+      {
+        "type": "library",
+        "name": "pandas",
+        "version": ">=",
+        "purl": "pkg:pypi/pandas@",
+        "bom-ref": "pypi/pandas@>="
+      },
+      {
+        "type": "library",
+        "name": "pytz",
+        "version": "unspecified",
+        "purl": "pkg:pypi/pytz",
+        "bom-ref": "pypi/pytz@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "requests",
+        "version": "unspecified",
+        "purl": "pkg:pypi/requests",
+        "bom-ref": "pypi/requests@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "scipy",
+        "version": ">=",
+        "purl": "pkg:pypi/scipy@",
+        "bom-ref": "pypi/scipy@>="
+      },
+      {
+        "type": "library",
+        "name": "h5py",
+        "version": "unspecified",
+        "purl": "pkg:pypi/h5py",
+        "bom-ref": "pypi/h5py@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "tzdata",
+        "version": "unspecified",
+        "purl": "pkg:pypi/tzdata",
+        "bom-ref": "pypi/tzdata@unspecified"
+      }
+    ]
+  },
+  "elapsed_seconds": 44.88
+}
